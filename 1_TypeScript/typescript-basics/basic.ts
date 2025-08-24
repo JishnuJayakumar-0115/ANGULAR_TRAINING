@@ -116,7 +116,7 @@ class Person {
     this.hobbies = hobbies;
   }
 
-  addHobbies(hobby: string){
+  addHobbies(hobby: string) {
     this.hobbies.push(hobby);
   }
 }
@@ -129,34 +129,33 @@ console.log("person hobbies = " + person.hobbies);
 
 console.log("person", person);
 
-person.addHobbies('Cycling');
+person.addHobbies("Cycling");
 
 console.log("person hobbies = " + person.hobbies);
 
 //? Interfaces
 
-interface Book{
-    name: string;
-    price: number;
+interface Book {
+  name: string;
+  price: number;
 
-    genre: () => void;
+  genre: () => void;
 }
 
 let saphiens: Book;
 
 saphiens = {
-    name: 'saphiens',
-    price: 499,
-    genre(){
-        console.log('History');
-        
-    }
-}
+  name: "saphiens",
+  price: 499,
+  genre() {
+    console.log("History");
+  },
+};
 
-class NewBook implements Book{
-    name: string  = 'Atomic Habits';
-    price: number = 499;
-    genre() {
-        console.log('Self Help'); 
-    };
+class NewBook implements Book {
+  name: string = "Atomic Habits";
+  price: number = 499;
+  genre() {
+    console.log("Self Help");
+  }
 }
