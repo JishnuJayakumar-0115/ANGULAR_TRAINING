@@ -1,0 +1,49 @@
+<!-- <div>
+  <button>
+    <img [src]="'images/' + selectedEmp.pic" [alt]="selectedEmp.name" />
+    <span>{{ selectedEmp.name }}</span>
+  </button>
+</div> -->
+
+<!-- <div>
+  <button>
+    <img [src]="imagePath" [alt]="selectedEmp.name" />
+    <span>{{ selectedEmp.name }}</span>
+  </button>
+</div> -->
+
+<!-- <div>
+  <button (click)="onClick()">
+    <img [src]="imagePath" [alt]="selectedEmp.name" />
+    <span>{{ selectedEmp.name }}</span>
+  </button>
+</div> -->
+
+
+<!-- <div>
+  <button (click)="onClick()">
+    <img [src]="imagePath()" [alt]="selectedEmp().name" />
+    <span>{{ selectedEmp().name }}</span>
+  </button>
+</div> -->
+
+<!-- <div>
+  <button (click)="onSelectEmp()">
+    <img [src]="imagePath()" [alt]="name" />
+    <span>{{ name }}</span>
+  </button>
+</div> -->
+
+<!-- <div>
+  <button (click)="onSelectEmp()">
+    <img [src]="imagePath()" [alt]="name()" />
+    <span>{{ name() }}</span>
+  </button>
+</div> -->
+
+<div>
+  <button [class.active]="selected()" (click)="onSelectEmp()">
+    <img [src]="imagePath()" [alt]="employee().name" />
+    <span>{{ employee().name }}</span>
+  </button>
+</div>

@@ -1,0 +1,135 @@
+<!-- <app-header />
+
+<main>
+  <ul id="employees">
+    <li>
+      <app-employee />
+    </li>
+  </ul>
+</main> -->
+
+<!-- <app-header />
+
+<main>
+  <ul id="employees">
+    <li>
+      <app-employee />
+    </li>
+    <li>
+      <app-employee />
+    </li>
+    <li>
+      <app-employee />
+    </li>
+    <li>
+      <app-employee />
+    </li>
+  </ul>
+</main> -->
+
+<!-- <app-header />
+
+<main>
+  <ul id="employees">
+    <li>
+      <app-employee
+        [id]="employees()[0].id"
+        [pic]="employees()[0].pic"
+        [name]="employees()[0].name"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [id]="employees()[1].id"
+        [pic]="employees()[1].pic"
+        [name]="employees()[1].name"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [id]="employees()[2].id"
+        [pic]="employees()[2].pic"
+        [name]="employees()[2].name"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [id]="employees()[3].id"
+        [pic]="employees()[3].pic"
+        [name]="employees()[3].name"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+  </ul>
+  
+  <app-tasks [name]="selectedEmployee()?.name" />
+</main> -->
+
+<!-- <app-header />
+
+<main>
+  <ul id="employees">
+    <li>
+      <app-employee
+        [employee]="employees()[0]"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [employee]="employees()[1]"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [employee]="employees()[2]"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+    <li>
+      <app-employee
+        [employee]="employees()[3]"
+        (select)="onSelectEmployee($event)"
+      />
+    </li>
+  </ul>
+  
+  <app-tasks [name]="selectedEmployee()?.name" />
+</main> -->
+
+<!-- <app-header />
+
+<main>
+  <ul id="employees">
+    <li *ngFor="let employee of employees()">
+      <app-employee [employee]="employee" (select)="onSelectEmployee($event)" />
+    </li>
+  </ul>
+
+  <app-tasks *ngIf="selectedEmployee(); else fallback" [name]="selectedEmployee()?.name" />
+  <ng-template #fallback>
+    <p id="fallback">Select an employee!!!</p>
+  </ng-template>
+</main> -->
+
+<app-header />
+
+<main>
+  <ul id="employees">
+    @for(employee of employees(); track employee.id){
+    <li>
+      <app-employee [employee]="employee" [selected]="employee.id === selectedEmployeeId()" (select)="onSelectEmployee($event)" />
+    </li>
+    }
+  </ul>
+
+  @if(selectedEmployee()){
+  <app-allocations [empId]="selectedEmployee()?.id" [name]="selectedEmployee()?.name" />
+  } @else {
+  <p id="fallback">Select an employee!!!</p>
+  }
+</main>

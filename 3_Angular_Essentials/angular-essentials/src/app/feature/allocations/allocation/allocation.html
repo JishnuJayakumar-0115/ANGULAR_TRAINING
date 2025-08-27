@@ -1,0 +1,8 @@
+<article>
+  <h2>{{ allocation().title }}</h2>
+  <time>{{ allocation().due }}</time>
+  <p>{{ allocation().desc }}</p>
+  <p class="actions">
+    <button (click)="onComplete()">Completed</button>
+  </p>
+</article>

@@ -1,0 +1,41 @@
+article {
+  padding: 1rem;
+  background-color: var(--accent);
+  color: var(--text-light);
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin: 0;
+}
+
+time {
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+.actions {
+  text-align: right;
+  margin: 0;
+}
+
+.actions button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: var(--secondary-bg);
+  color: var(--text-dark);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}

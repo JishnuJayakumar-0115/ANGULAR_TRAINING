@@ -1,0 +1,32 @@
+:root {
+  --primary: #ff7f3e;
+  --secondary: #2a629a;
+  --neutral-light: #ffda78;
+  --neutral-lighter: #fff6d8;
+
+  --primary-bg: var(--secondary);
+  --secondary-bg: var(--neutral-light);
+  --accent: var(--primary);
+  --muted-bg: var(--neutral-lighter);
+  --light-bg: var(--neutral-lighter);
+
+  --text-light: #ffffff;
+  --text-dark: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
