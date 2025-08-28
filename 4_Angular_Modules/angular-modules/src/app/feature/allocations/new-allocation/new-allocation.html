@@ -1,0 +1,25 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+  <h2>Add Allocation</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="project">Project</label>
+      <input type="text" id="project" name="project" [(ngModel)]="project" />
+    </div>
+
+    <div>
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="3" name="desc" [(ngModel)]="desc" ></textarea>
+    </div>
+
+    <div>
+      <label for="due-date">Due</label>
+      <input type="date" id="due-date" name="due-date" [(ngModel)]="due" />
+    </div>
+
+    <div class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</dialog>

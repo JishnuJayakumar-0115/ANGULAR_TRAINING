@@ -1,7 +1,7 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { Allocation } from './allocation/allocation';
 import { NewAllocation } from './new-allocation/new-allocation';
-import { type NewAllocationModel } from '../../shared/models/new-allocation';
+import { type NewAllocationModel } from '../../shared/models/new-allocation.model';
 import { AllocationsService } from './allocations.service';
 
 @Component({
@@ -21,8 +21,8 @@ export class Allocations {
   //private allocationsService = new AllocationsService();
   private allocationsService: AllocationsService;
 
-  constructor(allocationsService: AllocationsService){
-    this.allocationsService = allocationsService
+  constructor(allocationsService: AllocationsService) {
+    this.allocationsService = allocationsService;
   }
 
   //allocations = signal(EMP_ALLOCATIONS);

@@ -1,0 +1,6 @@
+<app-card>
+  <button [class.active]="selected()" (click)="onSelectEmp()">
+    <img [src]="imagePath()" [alt]="employee().name" />
+    <span>{{ employee().name }}</span>
+  </button>
+</app-card>

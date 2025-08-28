@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { EMP_ALLOCATIONS } from '../../../../public/data/emp_allocations';
-import { type NewAllocationModel } from '../../shared/models/new-allocation';
+import { type NewAllocationModel } from '../../shared/models/new-allocation.model';
 
 @Injectable({
   providedIn: 'root',

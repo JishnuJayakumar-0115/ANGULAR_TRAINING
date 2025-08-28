@@ -1,7 +1,7 @@
 import { Component, inject, input, output } from '@angular/core';
 import { AllocationModel } from '../../../shared/models/allocation.model';
 import { Card } from '../../../shared/ui/card/card';
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { AllocationsService } from '../allocations.service';
 
 // interface AllocationModel {

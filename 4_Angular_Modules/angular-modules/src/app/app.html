@@ -1,0 +1,17 @@
+<app-header />
+
+<main>
+  <ul id="employees">
+    @for(employee of employees(); track employee.id){
+    <li>
+      <app-employee [employee]="employee" [selected]="employee.id === selectedEmployeeId()" (select)="onSelectEmployee($event)" />
+    </li>
+    }
+  </ul>
+
+  @if(selectedEmployee()){
+  <app-allocations [empId]="selectedEmployee()!.id" [name]="selectedEmployee()!.name" />
+  } @else {
+  <p id="fallback">Select an employee!!!</p>
+  }
+</main>

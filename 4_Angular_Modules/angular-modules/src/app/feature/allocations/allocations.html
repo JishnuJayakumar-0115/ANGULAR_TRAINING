@@ -1,0 +1,25 @@
+@if(isAddingAllocation()){
+<app-new-allocation [empId]="empId()" (cancel)="onCancelAllocation()" />
+}
+
+<section id="allocations">
+  <header>
+    <h2>{{ nameTitle() }}</h2>
+    <menu>
+      <button (click)="onAddAllocation()">Add Allocations</button>
+    </menu>
+  </header>
+
+  <ul>
+    @for(allocation of selectedEmpAllocations(); track allocation.id){
+    <li>
+      <app-allocation [allocation]="allocation"></app-allocation>
+    </li>
+    }
+    @empty {
+      <li>
+        <h2>No Allocations</h2>
+      </li>
+    }
+  </ul>
+</section>

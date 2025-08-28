@@ -1,6 +1,6 @@
 import { Component, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NewAllocationModel } from '../../../shared/models/new-allocation';
+import { NewAllocationModel } from '../../../shared/models/new-allocation.model';
 import { AllocationsService } from '../allocations.service';
 
 @Component({
