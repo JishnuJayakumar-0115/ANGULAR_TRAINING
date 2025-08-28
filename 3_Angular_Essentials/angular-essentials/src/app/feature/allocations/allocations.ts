@@ -1,7 +1,8 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { Allocation } from './allocation/allocation';
 import { NewAllocation } from './new-allocation/new-allocation';
-import { EMP_ALLOCATIONS } from '../../../../public/data/emp_allocations';
+import { type NewAllocationModel } from '../../shared/models/new-allocation';
+import { AllocationsService } from './allocations.service';
 
 @Component({
   selector: 'app-allocations',
@@ -10,52 +11,30 @@ import { EMP_ALLOCATIONS } from '../../../../public/data/emp_allocations';
   styleUrl: './allocations.css',
 })
 export class Allocations {
-  empId = input<string>();
-  name = input<string>();
+  empId = input.required<string>();
+  name = input.required<string>();
 
   isAddingAllocation = signal(false);
 
   nameTitle = computed(() => `${this.name()}'s Allocations`);
 
+  //private allocationsService = new AllocationsService();
+  private allocationsService: AllocationsService;
+
+  constructor(allocationsService: AllocationsService){
+    this.allocationsService = allocationsService
+  }
+
   //allocations = signal(EMP_ALLOCATIONS);
-  allocations = signal([
-    {
-      id: 'p1',
-      empId: 'e1',
-      title: 'Project 1',
-      desc: 'project description',
-      due: '12-09-2025',
-    },
-    {
-      id: 'p2',
-      empId: 'e2',
-      title: 'Project 2',
-      desc: 'project description',
-      due: '13-09-2025',
-    },
-    {
-      id: 'p3',
-      empId: 'e2',
-      title: 'Project 3',
-      desc: 'project description',
-      due: '15-09-2025',
-    },
-    {
-      id: 'p4',
-      empId: 'e2',
-      title: 'Project 4',
-      desc: 'project description',
-      due: '15-09-2025',
-    },
-  ]);
 
   selectedEmpAllocations = computed(() => {
-    return this.allocations().filter((allocation) => allocation.empId === this.empId());
+    //return this.allocations().filter((allocation) => allocation.empId === this.empId());
+    return this.allocationsService.getSelectedEmpAllocations(this.empId());
   });
 
-  onCompleteAllocation(id: string) {
-    this.allocations.set(this.allocations().filter((allocation) => allocation.id !== id));
-  }
+  // onCompleteAllocation(id: string) {
+  //   //this.allocations.set(this.allocations().filter((allocation) => allocation.id !== id));
+  // }
 
   onAddAllocation() {
     this.isAddingAllocation.set(true);
@@ -64,4 +43,18 @@ export class Allocations {
   onCancelAllocation() {
     this.isAddingAllocation.set(false);
   }
+
+  // onCreateAllocation(allocation: NewAllocationModel) {
+  //   const newAllocation = {
+  //     id: (this.allocations().length + 1).toString(),
+  //     empId: this.empId(),
+  //     project: allocation.project,
+  //     desc: allocation.desc,
+  //     due: allocation.due,
+  //   };
+
+  //   this.allocations.set([...this.allocations(), newAllocation]);
+
+  //   this.isAddingAllocation.set(false);
+  // }
 }

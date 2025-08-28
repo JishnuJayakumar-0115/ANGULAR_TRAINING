@@ -128,7 +128,7 @@
   </ul>
 
   @if(selectedEmployee()){
-  <app-allocations [empId]="selectedEmployee()?.id" [name]="selectedEmployee()?.name" />
+  <app-allocations [empId]="selectedEmployee()!.id" [name]="selectedEmployee()!.name" />
   } @else {
   <p id="fallback">Select an employee!!!</p>
   }

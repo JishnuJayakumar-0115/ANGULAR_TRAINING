@@ -1,5 +1,9 @@
+<!-- @if(isAddingAllocation()){
+<app-new-allocation [empId]="empId()" (cancel)="onCancelAllocation()" (add)="onCreateAllocation($event)" />
+} -->
+
 @if(isAddingAllocation()){
-<app-new-allocation (cancel)="onCancelAllocation()" />
+<app-new-allocation [empId]="empId()" (cancel)="onCancelAllocation()" />
 }
 
 <section id="allocations">
@@ -13,11 +17,13 @@
   <ul>
     @for(allocation of selectedEmpAllocations(); track allocation.id){
     <li>
-      <app-allocation
-        [allocation]="allocation"
-        (complete)="onCompleteAllocation($event)"
-      ></app-allocation>
+      <app-allocation [allocation]="allocation"></app-allocation>
     </li>
+    }
+    @empty {
+      <li>
+        <h2>No Allocations</h2>
+      </li>
     }
   </ul>
 </section>

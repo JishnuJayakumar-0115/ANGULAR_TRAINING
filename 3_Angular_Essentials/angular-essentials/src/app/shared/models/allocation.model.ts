@@ -1,7 +1,7 @@
 export interface AllocationModel {
   id: string;
   empId: string;
-  title: string;
+  project: string;
   desc: string;
   due: string;
 }

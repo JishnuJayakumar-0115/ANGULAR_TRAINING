@@ -19,7 +19,6 @@
   </button>
 </div> -->
 
-
 <!-- <div>
   <button (click)="onClick()">
     <img [src]="imagePath()" [alt]="selectedEmp().name" />
@@ -41,9 +40,16 @@
   </button>
 </div> -->
 
-<div>
+<!-- <div>
   <button [class.active]="selected()" (click)="onSelectEmp()">
     <img [src]="imagePath()" [alt]="employee().name" />
     <span>{{ employee().name }}</span>
   </button>
-</div>
+</div> -->
+
+<app-card>
+  <button [class.active]="selected()" (click)="onSelectEmp()">
+    <img [src]="imagePath()" [alt]="employee().name" />
+    <span>{{ employee().name }}</span>
+  </button>
+</app-card>

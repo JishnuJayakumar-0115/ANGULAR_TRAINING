@@ -1,8 +1,41 @@
-<article>
-  <h2>{{ allocation().title }}</h2>
+<!-- <article>
+  <h2>{{ allocation().project }}</h2>
   <time>{{ allocation().due }}</time>
   <p>{{ allocation().desc }}</p>
   <p class="actions">
     <button (click)="onComplete()">Completed</button>
   </p>
-</article>
+</article> -->
+
+<!-- <app-card>
+  <article>
+    <h2>{{ allocation().project }}</h2>
+    <time>{{ allocation().due }}</time>
+    <p>{{ allocation().desc }}</p>
+    <p class="actions">
+      <button (click)="onComplete()">Completed</button>
+    </p>
+  </article>
+</app-card> -->
+
+<!-- <app-card>
+  <article>
+    <h2>{{ allocation().project }}</h2>
+    <time>{{ allocation().due | date }}</time>
+    <p>{{ allocation().desc }}</p>
+    <p class="actions">
+      <button (click)="onComplete()">Completed</button>
+    </p>
+  </article>
+</app-card> -->
+
+<app-card>
+  <article>
+    <h2>{{ allocation().project }}</h2>
+    <time>{{ allocation().due | date:'fullDate' }}</time>
+    <p>{{ allocation().desc }}</p>
+    <p class="actions">
+      <button (click)="onComplete()">Completed</button>
+    </p>
+  </article>
+</app-card>

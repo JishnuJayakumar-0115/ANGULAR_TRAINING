@@ -1,25 +1,77 @@
+<!-- <div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+  <h2>Add Allocation</h2>
+  <form>
+    <div>
+      <label for="project">Project</label>
+      <input type="text" id="project" name="project" [(ngModel)]="project" />
+    </div>
+
+    <div>
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="3" name="desc" [(ngModel)]="project"></textarea>
+    </div>
+
+    <div>
+      <label for="due-date">Due</label>
+      <input type="date" id="due-date" name="due-date" />
+    </div>
+
+    <div class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</dialog> -->
+
+<!-- <div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+  <h2>Add Allocation</h2>
+  <form>
+    <div>
+      <label for="project">Project</label>
+      <input type="text" id="project" name="project" [(ngModel)]="project" />
+    </div>
+
+    <div>
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="3" name="desc" [(ngModel)]="desc" ></textarea>
+    </div>
+
+    <div>
+      <label for="due-date">Due</label>
+      <input type="date" id="due-date" name="due-date" [(ngModel)]="dueDate" />
+    </div>
+
+    <div class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</dialog> -->
+
 <div class="backdrop" (click)="onCancel()"></div>
 <dialog open>
-    <h2>Add Allocation</h2>
-    <form>
-        <p>
-            <label for="title">Project</label>
-            <input type="text" id="title" name="title" />
-        </p>
+  <h2>Add Allocation</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="project">Project</label>
+      <input type="text" id="project" name="project" [(ngModel)]="project" />
+    </div>
 
-        <p>
-            <label for="summary">Description</label>
-            <textarea id="summary" rows="5" name="summary"></textarea>
-        </p>
+    <div>
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="3" name="desc" [(ngModel)]="desc" ></textarea>
+    </div>
 
-        <p>
-            <label for="due-date">Due</label>
-            <input type="date" id="due-date" name="due-date" />
-        </p>
+    <div>
+      <label for="due-date">Due</label>
+      <input type="date" id="due-date" name="due-date" [(ngModel)]="due" />
+    </div>
 
-        <p class="actions">
-            <button type="button" (click)="onCancel()">Cancel</button>
-            <button type="submit">Create</button>
-        </p>
-    </form>
+    <div class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit">Create</button>
+    </div>
+  </form>
 </dialog>

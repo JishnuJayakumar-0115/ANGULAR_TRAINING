@@ -1,8 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { Header } from './feature/header/header';
 import { Employee } from './feature/employee/employee';
-import { EMPLOYEES_LIST } from './feature/employee/employees-list';
-import { Allocations } from "./feature/allocations/allocations";
+import { EMPLOYEES_LIST } from '../../public/data/emp';
+import { Allocations } from './feature/allocations/allocations';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,4 @@ export class App {
   selectedEmployee = computed(() =>
     this.employees().find((emp) => emp.id === this.selectedEmployeeId())
   );
-
-  
 }

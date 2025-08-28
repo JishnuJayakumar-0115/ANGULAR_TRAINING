@@ -5,10 +5,11 @@ import {
   output,
 } from '@angular/core';
 import { type Emp } from '../../shared/models/employee.model';
+import { Card } from "../../shared/ui/card/card";
 
 @Component({
   selector: 'app-employee',
-  imports: [],
+  imports: [Card],
   templateUrl: './employee.html',
   styleUrl: './employee.css',
 })

@@ -1,5 +1,8 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { AllocationModel } from '../../../shared/models/allocation.model';
+import { Card } from '../../../shared/ui/card/card';
+import { DatePipe } from '@angular/common';
+import { AllocationsService } from '../allocations.service';
 
 // interface AllocationModel {
 //   id: string;
@@ -11,7 +14,7 @@ import { AllocationModel } from '../../../shared/models/allocation.model';
 
 @Component({
   selector: 'app-allocation',
-  imports: [],
+  imports: [Card, DatePipe],
   templateUrl: './allocation.html',
   styleUrl: './allocation.css',
 })
@@ -20,7 +23,10 @@ export class Allocation {
 
   complete = output<string>();
 
+  allocationsService = inject(AllocationsService);
+
   onComplete() {
-    this.complete.emit(this.allocation().id);
+    //this.complete.emit(this.allocation().id);
+    this.allocationsService.completeAllocation(this.allocation().id);
   }
 }
