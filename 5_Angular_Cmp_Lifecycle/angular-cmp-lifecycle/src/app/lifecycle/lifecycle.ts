@@ -1,6 +1,8 @@
 import {
   AfterContentChecked,
   AfterContentInit,
+  afterEveryRender,
+  afterNextRender,
   AfterViewChecked,
   AfterViewInit,
   Component,
@@ -37,8 +39,20 @@ export class Lifecycle
 
   private destroyRef = inject(DestroyRef);
 
+  // constructor() {
+  //   console.log('constructor', this.text());
+  // }
+
   constructor() {
     console.log('constructor', this.text());
+
+    afterEveryRender(() => {
+      console.log('afterEveryRender');
+    });
+
+    afterNextRender(() => {
+      console.log('afterNextRender');
+    });
   }
 
   // ngOnInit() {
