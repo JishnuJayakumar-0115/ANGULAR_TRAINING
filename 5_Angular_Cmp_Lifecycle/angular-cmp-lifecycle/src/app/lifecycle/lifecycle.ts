@@ -29,7 +29,7 @@ export class Lifecycle
     AfterViewChecked,
     OnDestroy
 {
-  text = input<string | undefined>();
+  text = input<number | undefined>();
 
   constructor() {
     console.log('constructor');

@@ -12,13 +12,13 @@ export class App {
 
   isVisible = signal(false);
   //text = signal('Number: ' + (Math.random() * 100).toFixed(2));
-  text = signal((Math.random() * 100).toFixed(2));
+  text = signal(+(Math.random() * 100).toFixed(2));
 
   onToggleVisibility() {
     this.isVisible.set(!this.isVisible());
   }
 
   onChange() {
-    this.text.set((Math.random() * 100).toFixed(2));
+    this.text.set(+(Math.random() * 100).toFixed(2));
   }
 }
