@@ -4,7 +4,9 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  DestroyRef,
   DoCheck,
+  inject,
   input,
   OnChanges,
   OnDestroy,
@@ -31,7 +33,9 @@ export class Lifecycle
 {
   text = input<number | undefined>();
 
-  private timer?: number;
+  //private timer?: number;
+
+  private destroyRef = inject(DestroyRef);
 
   constructor() {
     console.log('constructor', this.text());
@@ -40,7 +44,7 @@ export class Lifecycle
   // ngOnInit() {
   //   console.log('ngOnInit', this.text());
   // }
-  
+
   // ngOnInit() {
   //   console.log('ngOnInit', this.text());
   //   setInterval(() => {
@@ -48,11 +52,23 @@ export class Lifecycle
   //   }, 1000);
   // }
 
+  // ngOnInit() {
+  //   console.log('ngOnInit', this.text());
+  //   this.timer = setInterval(() => {
+  //     console.log('Timer : ' + (Math.random() * 100).toFixed(2));
+  //   }, 1000);
+  // }
+
   ngOnInit() {
     console.log('ngOnInit', this.text());
-    this.timer = setInterval(() => {
+    const timer = setInterval(() => {
       console.log('Timer : ' + (Math.random() * 100).toFixed(2));
     }, 1000);
+
+    this.destroyRef.onDestroy(() => {
+      clearInterval(timer);
+      console.log('destroyRef');
+    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -83,8 +99,12 @@ export class Lifecycle
   //   console.log('ngOnDestroy');
   // }
 
+  // ngOnDestroy() {
+  //   console.log('ngOnDestroy');
+  //   clearTimeout(this.timer);
+  // }
+
   ngOnDestroy() {
     console.log('ngOnDestroy');
-    clearTimeout(this.timer);
   }
 }
