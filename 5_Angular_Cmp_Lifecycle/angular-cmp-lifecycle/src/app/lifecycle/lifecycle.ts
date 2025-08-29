@@ -31,12 +31,28 @@ export class Lifecycle
 {
   text = input<number | undefined>();
 
+  private timer?: number;
+
   constructor() {
-    console.log('constructor');
+    console.log('constructor', this.text());
   }
 
+  // ngOnInit() {
+  //   console.log('ngOnInit', this.text());
+  // }
+  
+  // ngOnInit() {
+  //   console.log('ngOnInit', this.text());
+  //   setInterval(() => {
+  //     console.log('Timer : ' + (Math.random() * 100).toFixed(2));
+  //   }, 1000);
+  // }
+
   ngOnInit() {
-    console.log('ngOnInit');
+    console.log('ngOnInit', this.text());
+    this.timer = setInterval(() => {
+      console.log('Timer : ' + (Math.random() * 100).toFixed(2));
+    }, 1000);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -63,7 +79,12 @@ export class Lifecycle
     console.log('ngAfterViewChecked');
   }
 
+  // ngOnDestroy() {
+  //   console.log('ngOnDestroy');
+  // }
+
   ngOnDestroy() {
     console.log('ngOnDestroy');
+    clearTimeout(this.timer);
   }
 }
