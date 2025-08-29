@@ -6,7 +6,8 @@ import { Allocations } from "./feature/allocations/allocations";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Employee, Allocations],
+  standalone: false,
+  //imports: [Header, Employee, Allocations],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

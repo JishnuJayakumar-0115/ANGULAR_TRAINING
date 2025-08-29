@@ -4,7 +4,8 @@ import { Card } from "../../shared/ui/card/card";
 
 @Component({
   selector: 'app-employee',
-  imports: [Card],
+  standalone: false,
+  //imports: [Card],
   templateUrl: './employee.html',
   styleUrl: './employee.css',
 })

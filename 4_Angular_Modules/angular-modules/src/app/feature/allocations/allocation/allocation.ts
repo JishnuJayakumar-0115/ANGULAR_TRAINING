@@ -6,7 +6,8 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-allocation',
-  imports: [Card, DatePipe],
+  standalone: false,
+  //imports: [Card, DatePipe],
   templateUrl: './allocation.html',
   styleUrl: './allocation.css',
 })

@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-new-allocation',
-  imports: [FormsModule],
+  standalone: false,
+  //imports: [FormsModule],
   templateUrl: './new-allocation.html',
   styleUrl: './new-allocation.css',
 })

@@ -5,7 +5,8 @@ import { Allocation } from "./allocation/allocation";
 
 @Component({
   selector: 'app-allocations',
-  imports: [NewAllocation, Allocation],
+  standalone: false,
+  //imports: [NewAllocation, Allocation],
   templateUrl: './allocations.html',
   styleUrl: './allocations.css',
 })
