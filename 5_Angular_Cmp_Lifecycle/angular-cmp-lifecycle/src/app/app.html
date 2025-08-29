@@ -1,0 +1,12 @@
+<div class="divButtons">
+  <button (click)="onToggleVisibility()">
+    Toggle Visibility
+  </button>
+  <button (click)="onChange()">
+    Change Number
+  </button>
+</div>
+
+@if (isVisible()) {
+  <app-lifecycle [text]="text()" />
+}
