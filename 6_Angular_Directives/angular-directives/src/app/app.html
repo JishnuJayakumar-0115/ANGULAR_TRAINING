@@ -1,0 +1,15 @@
+<main>
+  <app-auth>
+    <app-external-links />
+    <!-- <p appAuth="admin" class="protected-content authenticated">Admin!!!</p> -->
+    <!-- <ng-template appAuth="admin">
+      <p class="protected-content authenticated">Admin!!!</p>
+    </ng-template> -->
+    <!-- <p *appAuth="'admin'" class="protected-content authenticated">Admin!!!</p> -->
+    <p *appAuth="'admin'" appCustomLogs class="protected-content authenticated">
+      Admin!!!
+    </p>
+    <p *appAuth="'user'" class="protected-content authenticated">User!!!</p>
+    <!-- <p *appAuth="'guest'" class="protected-content authenticated">Guest!!!</p> -->
+  </app-auth>
+</main>

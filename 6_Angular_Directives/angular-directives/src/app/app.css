@@ -1,0 +1,28 @@
+main {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 50rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+
+.protected-content {
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#protected-content p {
+  margin: 0;
+}
+
+.authenticated {
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.7;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

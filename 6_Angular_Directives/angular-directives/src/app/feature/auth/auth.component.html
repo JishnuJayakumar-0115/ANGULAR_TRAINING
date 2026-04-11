@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="container">
+    <h2 appHighlight="blue">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="userId">User Id</label>
+        <input id="userId" type="text" name="userId" [(ngModel)]="userId" />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+        />
+      </div>
+
+      <button>Login</button>
+
+      <ng-content />
+    </form>
+  </div>
+</div>
+
+<div class="wrapper" *ngIf="isAdmin()">
+  <div class="container">
+    <p>Admin Only!!!</p>
+  </div>
+</div>

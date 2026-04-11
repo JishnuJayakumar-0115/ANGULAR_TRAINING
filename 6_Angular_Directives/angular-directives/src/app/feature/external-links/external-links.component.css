@@ -1,0 +1,27 @@
+ul {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  background-color: crimson;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover {
+  background-color: rgb(252, 0, 50);
+  box-shadow: 0 4px 10px rgba(38, 78, 197, 0.3);
+}
