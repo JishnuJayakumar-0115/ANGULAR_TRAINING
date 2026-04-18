@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="left">
+    <div class="card">
+      <h2>Observable</h2>
+      <button (click)="start()">Start Stream</button>
+    </div>
+
+    <div class="card">
+      <h2>Async Pipe</h2>
+      <div>{{ data$ | async }}</div>
+    </div>
+
+    <div class="card">
+      <h2>BehaviorSubject</h2>
+      <p>{{ user$ | async }}</p>
+      <button (click)="changeUser()">Change User</button>
+    </div>
+
+    <div class="card">
+      <h2>Signal</h2>
+      <p>{{ count() }}</p>
+      <button (click)="increment()">+</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="card">
+      <h2>User List</h2>
+
+      <div class="input-group">
+        <input #name placeholder="Enter name" />
+        <button (click)="addUser(name.value)">Add</button>
+      </div>
+
+      <ul>
+        @for (user of users$ | async; track $index) {
+        <li>{{ user }}</li>
+        }
+      </ul>
+
+      <p class="count">Total Users: {{ usersCount$ | async }}</p>
+    </div>
+
+    <div class="card">
+      <h2>Observable to Signal</h2>
+      <p><b>Signal Value:</b> {{ usersSignal().length }}</p>
+    </div>
+
+    <div class="card">
+      <h2>Signal to Observable</h2>
+      <p><b>Observable Value:</b> {{ count$ | async }}</p>
+    </div>
+  </div>
+</div>
