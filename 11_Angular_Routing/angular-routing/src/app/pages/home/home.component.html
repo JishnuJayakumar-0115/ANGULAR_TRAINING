@@ -1,0 +1,24 @@
+<div class="card">
+  <h1>Home</h1>
+</div>
+
+<div class="card">
+  <h2>Hover to start countdown</h2>
+
+  <div class="hover-box">
+    @defer (on hover) {
+      <app-countdown></app-countdown>
+    } @placeholder {
+      <p>Hover here to load the countdown...</p>
+    } @loading {
+      <p>Loading countdown...</p>
+    }
+  </div>
+</div>
+
+<nav class="sub-nav">
+  <a [routerLink]="['stats']" routerLinkActive="selected">Stats</a>
+  <a [routerLink]="['settings']" routerLinkActive="selected">Settings</a>
+</nav>
+
+<router-outlet />

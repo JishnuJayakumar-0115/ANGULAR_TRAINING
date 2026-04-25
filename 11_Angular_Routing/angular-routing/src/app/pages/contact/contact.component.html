@@ -1,0 +1,21 @@
+<div class="card">
+  <h1>Contact{{ id1() ? "/" + id1() : "" }}{{ id2() ? "/" + id2() : "" }}</h1>
+</div>
+
+<div class="card">
+  <h2><strong>Contact Id1:</strong> {{ id1() }}</h2>
+  <h2><strong>Contact Id2:</strong> {{ id2() }}</h2>
+</div>
+
+<div class="card">
+  <h2><strong>Contact Id1$ (Observable):</strong> {{ id1$ }}</h2>
+  <h2><strong>Contact Id2$ (Observable):</strong> {{ id2$ }}</h2>
+</div>
+
+<div class="card">
+  <h2><strong>Msg:</strong> {{ msg() }}</h2>
+</div>
+
+<div class="card">
+  <h2><strong>Resolved:</strong> {{ contact() }}</h2>
+</div>

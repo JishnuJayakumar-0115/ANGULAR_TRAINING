@@ -1,0 +1,36 @@
+<nav>
+  <a
+    routerLink="/"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a
+    routerLink="/about"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true, queryParams: 'ignored' }"
+    (click)="goToAbout()"
+    >About</a
+  >
+
+  <a
+    routerLink="/contact"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Contact</a
+  >
+  <a
+    [routerLink]="['contact', title()]"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Contact/ID</a
+  >
+  <a
+    [routerLink]="['contact', title(), title()]"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Contact/ID1/ID2</a
+  >
+</nav>
+
+<router-outlet />
